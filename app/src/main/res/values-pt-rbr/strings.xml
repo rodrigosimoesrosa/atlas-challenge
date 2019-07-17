@@ -1,0 +1,15 @@
+<resources>
+
+    <!--Message errors-->
+    <string name="internet_not_found">Você está sem internet.</string>
+    <string name="get_everything_error">Não foi possível obter as notícias. Por favor tente novamente mais tarde!</string>
+    <string name="error_generic_message">Ocorreu um erro!</string>
+
+    <!--Content Description-->
+    <string name="content_description_icon">Ícone Atlas Quantum</string>
+
+    <string name="list_news_empty_list">Não foi encontrado nenhuma notícia. Por favor tente novamente!</string>
+    <string name="try_again">Tente novamente!</string>
+    <string name="list_news">Notícias de cripto moedas</string>
+
+</resources>

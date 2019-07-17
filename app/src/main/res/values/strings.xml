@@ -1,0 +1,15 @@
+<resources>
+
+    <!--Message errors-->
+    <string name="internet_not_found">There is no Internet connection.</string>
+    <string name="get_everything_error">It not possible to fetch articles. Please try again later!</string>
+    <string name="error_generic_message">Has occurred an error!</string>
+
+    <!--Content Description-->
+    <string name="content_description_icon">Atlas Launch Icon</string>
+
+    <string name="list_news_empty_list">There wasn\'t found any news. Please try again later!</string>
+    <string name="try_again">Try again!</string>
+    <string name="list_news">Crypto News</string>
+
+</resources>

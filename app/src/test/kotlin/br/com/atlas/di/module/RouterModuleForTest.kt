@@ -6,7 +6,7 @@ import com.nhaarman.mockito_kotlin.mock
 import dagger.Module
 
 /**
- * Created by rodrigosimoesrosa on 2019-06-26.
+ * Created by rodrigosimoesrosa on 2019-07-16.
  * Copyright © 2019. All rights reserved.
  */
 @Module

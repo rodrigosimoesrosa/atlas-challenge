@@ -8,7 +8,7 @@
     <!--Content Description-->
     <string name="content_description_icon">Atlas Launch Icon</string>
 
-    <string name="list_news_empty_list">There wasn\'t found any news. Please try again later!</string>
+    <string name="list_news_empty_list">There was not found any news. Please try again later!</string>
     <string name="try_again">Try again!</string>
     <string name="list_news">Crypto News</string>
 

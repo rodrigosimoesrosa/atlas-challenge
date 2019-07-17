@@ -14,7 +14,7 @@ import org.mockito.junit.MockitoJUnitRunner
 import javax.inject.Inject
 
 /**
- * Created by rodrigosimoesrosa on 2019-06-26.
+ * Created by rodrigosimoesrosa on 2019-07-16.
  * Copyright © 2019. All rights reserved.
  */
 @RunWith(MockitoJUnitRunner::class)
@@ -23,7 +23,7 @@ class ListNewsPresenterTest {
     private lateinit var view: ListNews.View
 
     private lateinit var router: ListNews.Router<ListNewsActivity>
-    private lateinit var interactor: NewsInteractor.LoadEverything
+    private lateinit var newsInteractor: NewsInteractor.LoadEverything
 
     @Inject lateinit var presenter: ListNews.Presenter
 
@@ -36,18 +36,26 @@ class ListNewsPresenterTest {
         DaggerListNewsComponentForTest.builder().build().inject(this)
 
         router = (presenter as ListNewsPresenter).router
-        interactor = (presenter as ListNewsPresenter).loadEverythingInteractor
+        newsInteractor = (presenter as ListNewsPresenter).loadEverythingInteractor
 
         presenter.attachView(view)
     }
 
     @Test
+    fun `check showNewsDetail()`() {
+        val article = articles.first().toView()
+        presenter.showArticleDetail(article)
+        verify(router).showArticleDetail(article)
+    }
+
+    @Test
     fun `check loadNews() empty`() {
         val emptyNews = emptyList<Article>()
+
         doAnswer {
             val callback: NewsInteractor.OnLoadEverything = it.getArgument(5)
             callback.onSuccess(emptyNews)
-        }.whenever(interactor).loadEverything(any(), any(), any(), any(), any(), any())
+        }.whenever(newsInteractor).loadEverything(any(), any(), any(), any(), any(), any())
 
         presenter.loadNews()
         verify(view).showEmptyList()
@@ -58,10 +66,11 @@ class ListNewsPresenterTest {
         doAnswer {
             val callback: NewsInteractor.OnLoadEverything = it.getArgument(5)
             callback.onSuccess(articles)
-        }.whenever(interactor).loadEverything(any(), any(), any(), any(), any(), any())
+        }.whenever(newsInteractor).loadEverything(any(), any(), any(), any(), any(), any())
 
+        val list = articles.map { it.toView() }
         presenter.loadNews()
-        verify(view).showArticles(articles.map { it.toView() })
+        verify(view).showArticles(list)
     }
 
     @Test
@@ -71,17 +80,10 @@ class ListNewsPresenterTest {
         doAnswer {
             val callback: NewsInteractor.OnLoadEverything = it.getArgument(5)
             callback.onError(throwable)
-        }.whenever(interactor).loadEverything(any(), any(), any(), any(), any(), any())
+        }.whenever(newsInteractor).loadEverything(any(), any(), any(), any(), any(), any())
 
         presenter.loadNews()
         verify(view).showFailed(throwable)
-    }
-
-    @Test
-    fun `check showNewsDetail()`() {
-        val article = articles.first().toView()
-        presenter.showArticleDetail(article)
-        verify(router).showArticleDetail(article)
     }
 
 }

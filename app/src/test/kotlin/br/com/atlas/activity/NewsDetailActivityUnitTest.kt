@@ -11,7 +11,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.android.controller.ActivityController
 
 /**
- * Created by rodrigosimoesrosa on 2019-06-26.
+ * Created by rodrigosimoesrosa on 2019-07-16.
  * Copyright © 2019. All rights reserved.
  */
 @RunWith(RobolectricTestRunner::class)

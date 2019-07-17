@@ -14,7 +14,7 @@ import org.robolectric.RobolectricTestRunner
 import org.robolectric.android.controller.ActivityController
 
 /**
- * Created by rodrigosimoesrosa on 2019-06-26.
+ * Created by rodrigosimoesrosa on 2019-07-16.
  * Copyright © 2019. All rights reserved.
  */
 @RunWith(RobolectricTestRunner::class)
@@ -36,7 +36,7 @@ class ListNewsActivityUnitTest {
     }
 
     @Test
-    fun `check SubTitle text`() {
+    fun `check title text`() {
         val screenTitle = activity.findViewById(R.id.toolBar) as Toolbar
         val correctText = activity.getString(R.string.list_news)
 

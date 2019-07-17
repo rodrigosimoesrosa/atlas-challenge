@@ -10,7 +10,7 @@ import android.view.View
 import org.hamcrest.Matcher
 
 /**
- * Created by rodrigosimoesrosa on 2019-06-26.
+ * Created by rodrigosimoesrosa on 2019-07-16.
  * Copyright © 2019. All rights reserved.
  */
 class ViewShownIdlingResource(private val viewMatcher: Matcher<View>) : IdlingResource {

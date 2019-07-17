@@ -8,7 +8,7 @@
     <!--Content Description-->
     <string name="content_description_icon">Ícone Atlas Quantum</string>
 
-    <string name="list_news_empty_list">Não foi encontrado nenhuma notícia. Por favor tente novamente!</string>
+    <string name="list_news_empty_list">Não foi encontrada nenhuma notícia. Por favor tente novamente!</string>
     <string name="try_again">Tente novamente!</string>
     <string name="list_news">Notícias de cripto moedas</string>
 
